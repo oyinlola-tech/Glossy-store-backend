@@ -39,6 +39,17 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', service: 'glossy-store-backend' });
 });
 
+app.get('/api/info', (req, res) => {
+  res.json({
+    name: 'Glossy Store Backend',
+    version: process.env.APP_VERSION ,
+    environment: process.env.NODE_ENV,
+    owner: process.env.APP_OWNER ,
+    portfolio: process.env.APP_PORTFOLIO ,
+    docs_url: '/api/docs',
+  });
+});
+
 // Routes
 app.use('/api', routes);
 mountSwagger(app);

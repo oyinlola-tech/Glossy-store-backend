@@ -32,7 +32,7 @@ const swaggerSpec = {
   openapi: '3.0.3',
   info: {
     title: 'Glossy Store API',
-    version: '1.5.0',
+    version: '2.0.5',
     description: 'API docs with request and response examples for all endpoints.',
   },
   servers: [{ url: '/api', description: 'API Base' }],
@@ -125,6 +125,20 @@ const swaggerSpec = {
   },
   paths: {
     '/health': { get: { tags: ['Health'], summary: 'Service health', responses: publicResponses({ status: 'ok', service: 'glossy-store-backend' }, ref('HealthResponse')) } },
+    '/info': {
+      get: {
+        tags: ['Health'],
+        summary: 'Service metadata',
+        responses: publicResponses({
+          name: 'Glossy Store Backend',
+          version: '1.0.0',
+          environment: 'production',
+          owner: 'OLUWAYEMI OYINLOLA MICHAEL',
+          portfolio: 'https://oyinlola.site',
+          docs_url: '/api/docs',
+        }, ref('ApiObject')),
+      },
+    },
 
     '/auth/register': {
       post: {
