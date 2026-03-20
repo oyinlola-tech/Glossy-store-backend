@@ -3,7 +3,7 @@
 Production-ready API backend for Glossy Store.
 
 Owner: `OLUWAYEMI OYINLOLA MICHAEL`  
-Portfolio: `https://oyinlola.site`
+Portfolio: `https://oyinlola.site` 
 
 ## Quick Start
 
